@@ -8,6 +8,20 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+var googleMapsClient = require('@google/maps').createClient({
+  key: 'AIzaSyA2H5SjYEcTDvaSQizYXYzhz9wDgVPXE4U'
+});
+
+googleMapsClient.geocode({
+  address: 'Korkeakoulunkatu 1, Tampere, Finland'
+}, function(err, response) {
+  console.log(err, response)
+  if (!err) {
+    console.log(response.json.results[0].geometry);
+
+  }
+});
+
 var app = express();
 
 // view engine setup
