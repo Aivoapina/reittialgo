@@ -3,3 +3,20 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  style.
+    #map {
+      width: 600px;
+      height: 600px;
+    }
+  #map
+    script.
+      function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 61.44863139999999, lng: 23.8549184},
+          scrollwheel: false,
+          zoom: 12
+        });
+        console.log(map);
+      }
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA2H5SjYEcTDvaSQizYXYzhz9wDgVPXE4U&callback=initMap', async='', defer='')
