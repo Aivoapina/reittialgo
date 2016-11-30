@@ -1,0 +1,14 @@
+{
+  "name": "reittialgo",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Anssi Varjonen <anssi.varjonen@student.tut.fi>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Aivoapina/reittialgo",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
