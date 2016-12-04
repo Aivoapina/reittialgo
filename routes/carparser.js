@@ -1,11 +1,25 @@
 /**
  * Created by anssi on 11/30/16.
  */
-function checkAvailability(cars){
-    var availableCars = [];
-    for (var car in cars){
-        if (car.availabilityData.available ){
-            availableCars.push(car)
+
+module.exports =
+{
+    checkAvailability: function(cars) {
+        var availableCars = [];
+        for (var index in cars) {
+            if (cars[index].availabilityData.available) {
+                availableCars.push(cars[index]);
+                console.log(index);
+            }
         }
+        return availableCars;
+    },
+    getAddress: function(cars) {
+        var addresses = [];
+        for (var index in cars){
+            addresses.push(cars[index].homeLocationData.fullAddress);
+        }
+        return addresses;
     }
 }
+return module.exports;

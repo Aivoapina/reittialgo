@@ -20,6 +20,7 @@ block content
               zoom: 12
             });
             console.log(map);
+            document.getElementById('startdate').valueAsDate = new Date();
           }
         script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA2H5SjYEcTDvaSQizYXYzhz9wDgVPXE4U&callback=initMap', async='', defer='')
     .col-sm-4
@@ -27,4 +28,11 @@ block content
         .form-group
           label(for='address') Your address:
           input#address.form-group(type='text', name='address' )
+          br
+          label(for='startdate') Start date:
+          input#startdate.form-group(type='date', name='startdate')
+          br
+          label(for='enddate') Start date:
+          input#enddate.form-group(type='date', name='enddate')
+          br
           button.btn.btn-primary(type='submit') Submit
