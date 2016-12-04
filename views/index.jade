@@ -20,3 +20,11 @@ block content
         console.log(map);
       }
     script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA2H5SjYEcTDvaSQizYXYzhz9wDgVPXE4U&callback=initMap', async='', defer='')
+
+  h1= title
+  form(name="add-estimation", method="post")
+      div.input
+          span.label Oma Osoitteesi
+          input(type="text", name="Oma osoitteesi")
+      div.actions
+          input(type="submit", value="Lähetä")
