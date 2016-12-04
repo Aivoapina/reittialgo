@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var request = require('request')
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -22,6 +23,12 @@ googleMapsClient.geocode({
   }
 });
 
+googleMapsClient.distanceMatrix({
+  origins: ['61.4499803802915', '23.8562673802915'],
+  destinations: ['62.59984', '29.751513']
+}, function(err, response) {
+  console.log('kusmuna'+JSON.Parse(response.json));
+});
 
 
 var app = express();
