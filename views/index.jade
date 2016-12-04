@@ -23,8 +23,8 @@ block content
           }
         script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA2H5SjYEcTDvaSQizYXYzhz9wDgVPXE4U&callback=initMap', async='', defer='')
     .col-sm-4
-      form
-        #form-group
+      form(action='/', method='post')
+        .form-group
           label(for='address') Your address:
-          input#address.form-group(type='text')
+          input#address.form-group(type='text', name='address' )
           button.btn.btn-primary(type='submit') Submit
