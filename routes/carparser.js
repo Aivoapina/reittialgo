@@ -9,7 +9,7 @@ module.exports =
         for (var index in cars) {
             if (cars[index].availabilityData.available) {
                 availableCars.push(cars[index]);
-                console.log(index);
+                //console.log(index);
             }
         }
         return availableCars;

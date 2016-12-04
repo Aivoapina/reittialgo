@@ -3,7 +3,7 @@ var request = require('request');
 var carparser = require('./carparser.js')
 var mapmodule = require('./mapmodule.js')
 var router = express.Router();
-var mapmodule = require ('mapmodule');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,12 +15,17 @@ router.get('/', function(req, res, next) {
     });
 });
 router.post('/', function(req, res, next) {
+  mapmodule.nollaaLyhyin();
     console.log(req.body);
     request('https://backend.24rent.fi/api2/car/search?startTime=' + req.body.startdate + '%2020:00:00&endTime=' + req.body.enddate + '%2014:00:00&km=50', function (error, response, body) {
         //console.log(JSON.parse(body));
         var availableCars = carparser.checkAvailability(JSON.parse(body));
-        mapmodule.etaisyys(req.body.address, carparser.getAddress(availableCars));
-        res.render('index', {title: 'Pressi'});
+        
+        console.log(carparser.getAddress(availableCars));
+        mapmodule.etaisyys(req.body.address, carparser.getAddress(availableCars), function(response){
+          res.render('index', response.json);  
+        });
+        
     });
 });
 module.exports = router;

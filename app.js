@@ -10,9 +10,9 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var mapmodule = require ('./routes/mapmodule')
 
-mapmodule.etaisyys('Insinöörinkatu 19', 'Annalankatu 10');
-//mapmodule.lyhyinMatka();
-mapmodule.etaisyys('Insinöörinkatu 19', 'Annalankatu 9');
+// mapmodule.etaisyys('Insinöörinkatu 19', 'Annalankatu 10');
+// //mapmodule.lyhyinMatka();
+// mapmodule.etaisyys('Insinöörinkatu 19', 'Annalankatu 9');
 
 var app = express();
 
