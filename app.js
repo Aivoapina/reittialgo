@@ -8,28 +8,11 @@ var request = require('request')
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var mapmodule = require ('./routes/mapmodule')
 
-var googleMapsClient = require('@google/maps').createClient({
-  key: 'AIzaSyA2H5SjYEcTDvaSQizYXYzhz9wDgVPXE4U'
-});
-
-googleMapsClient.geocode({
-  address: 'Korkeakoulunkatu 1, Tampere, Finland'
-}, function(err, response) {
-  console.log(err, response)
-  if (!err) {
-    console.log(response.json.results[0].geometry);
-
-  }
-});
-
-googleMapsClient.distanceMatrix({
-  origins: ['61.4499803802915', '23.8562673802915'],
-  destinations: ['62.59984', '29.751513']
-}, function(err, response) {
-  console.log('kusmuna'+JSON.Parse(response.json));
-});
-
+mapmodule.etaisyys('Insinöörinkatu 19', 'Annalankatu 10');
+//mapmodule.lyhyinMatka();
+mapmodule.etaisyys('Insinöörinkatu 19', 'Annalankatu 9');
 
 var app = express();
 
